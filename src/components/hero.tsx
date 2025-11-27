@@ -51,7 +51,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero visual - abstract glass shape */}
+      {/* Hero visual - abstract objects video */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,18 +59,18 @@ export function Hero() {
         className="mx-auto mt-16 max-w-4xl"
       >
         <div className="relative aspect-[16/9] overflow-hidden rounded-3xl">
-          {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6214d9]/20 via-purple-500/10 to-blue-500/20" />
-          <div className="absolute bottom-0 left-1/2 h-[80%] w-[80%] -translate-x-1/2 translate-y-1/4">
-            <div className="h-full w-full rounded-full bg-gradient-to-t from-[#6214d9]/50 via-purple-400/30 to-transparent blur-3xl" />
-          </div>
-          {/* Glass orb effect */}
-          <div className="absolute bottom-0 right-0 h-[70%] w-[60%] translate-x-[10%] translate-y-[20%]">
-            <div className="h-full w-full rounded-[40%] bg-gradient-to-br from-[#6214d9]/40 via-purple-500/25 to-blue-600/30 backdrop-blur-sm" />
-          </div>
-          <div className="absolute bottom-0 left-0 h-[50%] w-[40%] -translate-x-[10%] translate-y-[30%]">
-            <div className="h-full w-full rounded-[50%] bg-gradient-to-tr from-blue-500/30 via-[#6214d9]/20 to-transparent backdrop-blur-sm" />
-          </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover"
+          >
+            <source
+              src="https://limitless-framer-template.s3.us-east-005.backblazeb2.com/Abstract+Objects.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
       </motion.div>
     </section>

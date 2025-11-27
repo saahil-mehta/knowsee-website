@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import GlassSurface from "./glass-surface";
 
 const navItems = [
   { label: "Home", href: "#" },
@@ -19,12 +20,21 @@ export function Navigation() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-6 pt-6">
       <nav className="mx-auto max-w-4xl">
-        <div className="flex items-center justify-between rounded-full border border-white/[0.08] bg-black/60 px-6 py-3 backdrop-blur-xl">
+        <GlassSurface
+          width="100%"
+          height="auto"
+          borderRadius={9999}
+          backgroundOpacity={0.3}
+          blur={16}
+          saturation={1.2}
+          className="px-6 py-3"
+        >
+          <div className="flex w-full items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <span className="font-serif text-2xl">
-              <span className="font-normal">Know</span>
-              <span className="-ml-0.5 italic opacity-70">see.</span>
+              <span className="font-light">Know</span>
+              <span className="-ml-0.5 font-light italic opacity-70">see.</span>
             </span>
           </a>
 
@@ -59,7 +69,8 @@ export function Navigation() {
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+          </div>
+        </GlassSurface>
 
         {/* Mobile Menu */}
         <AnimatePresence>

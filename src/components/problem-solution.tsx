@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Search, Settings, CheckCircle } from "lucide-react";
+import GlassSurface from "./glass-surface";
 
 const solutions = [
   {
@@ -26,7 +27,15 @@ export function ProblemSolution() {
     <section id="features" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
         {/* Section container */}
-        <div className="section-container px-8 py-16 md:px-16">
+        <GlassSurface
+          width="100%"
+          height="auto"
+          borderRadius={32}
+          backgroundOpacity={0.2}
+          blur={12}
+          saturation={1.1}
+          className="px-8 py-16 md:px-16"
+        >
           {/* Problem Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +119,7 @@ export function ProblemSolution() {
               ))}
             </div>
           </motion.div>
-        </div>
+        </GlassSurface>
       </div>
     </section>
   );

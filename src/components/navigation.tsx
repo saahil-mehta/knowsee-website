@@ -54,7 +54,9 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="https://calendly.com/saahil_mehta/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-[#6214d9] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#7928e8]"
             >
               Book a call
@@ -94,7 +96,9 @@ export function Navigation() {
                   </a>
                 ))}
                 <a
-                  href="#contact"
+                  href="https://calendly.com/saahil_mehta/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
                   className="mt-4 rounded-full bg-[#6214d9] px-5 py-3 text-center text-sm font-medium text-white"
                 >

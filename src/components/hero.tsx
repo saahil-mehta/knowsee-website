@@ -37,7 +37,9 @@ export function Hero() {
           className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a
-            href="#contact"
+            href="https://calendly.com/saahil_mehta/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full rounded-full bg-[#6214d9] px-10 py-4 text-base font-medium text-white transition-all hover:bg-[#7928e8] sm:w-auto"
           >
             Book a call

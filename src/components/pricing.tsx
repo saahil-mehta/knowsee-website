@@ -66,7 +66,9 @@ export function Pricing() {
 
             {/* CTA */}
             <a
-              href="#contact"
+              href="https://calendly.com/saahil_mehta/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mb-8 block w-full rounded-full border border-white/[0.15] bg-white/5 py-4 text-center font-medium text-white transition-all hover:bg-white/10"
             >
               Book a call

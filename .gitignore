@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source fonts (only public/fonts is needed)
+/Satoshi_Complete
+
+# reference images
+/refs

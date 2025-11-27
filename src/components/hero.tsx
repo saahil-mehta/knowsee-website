@@ -11,7 +11,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 text-5xl leading-tight tracking-tight text-white md:text-7xl"
+          className="mb-6 text-5xl font-medium leading-tight tracking-tight text-white md:text-7xl"
         >
           Stop searching,
           <br />
@@ -23,7 +23,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-gray-400"
+          className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-gray-300"
         >
           Turn years of scattered company knowledge into instant, intelligent
           answers with best-in-class security.

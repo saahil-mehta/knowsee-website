@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Instrument_Serif } from "next/font/google";
+import { Space_Grotesk, Instrument_Serif, Geist } from "next/font/google";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -14,12 +14,25 @@ const satoshi = localFont({
   variable: "--font-satoshi",
 });
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
+
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-instrument-serif",
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${satoshi.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${geist.variable}`}>
       <body className="antialiased">
         {children}
       </body>

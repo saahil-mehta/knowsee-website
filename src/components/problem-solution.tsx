@@ -1,32 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Settings, CheckCircle } from "lucide-react";
+import { AlertTriangle, TrendingUp, Clock, UserX } from "lucide-react";
 import GlassSurface from "./glass-surface";
+import { HoverCard } from "./hover-card";
 
-const solutions = [
+const problems = [
   {
-    icon: Search,
-    title: "Quick Search",
-    description: 'Ask "What was Q2 revenue by region?"',
+    icon: AlertTriangle,
+    title: "Pipelines break silently.",
+    description:
+      "You find out when a CxO asks why the numbers don't match.",
   },
   {
-    icon: Settings,
-    title: "Messy data made clean",
-    description: "Inconsistent formats, missing",
+    icon: TrendingUp,
+    title: "Your data tools charge per connection.",
+    description:
+      "Your cloud bill grows every month. Nobody knows why.",
   },
   {
-    icon: CheckCircle,
-    title: "Strength in consolidation",
-    description: "AI securely learns your terminology,",
+    icon: Clock,
+    title: "Adding a new data source takes 6 weeks, 3 meetings, and a prayer.",
+    description: "",
+  },
+  {
+    icon: UserX,
+    title: "An ex-employee asks you to delete their data.",
+    description:
+      "You're not even sure where it all lives.",
   },
 ];
 
 export function ProblemSolution() {
   return (
-    <section id="features" className="px-6 py-24">
+    <section className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        {/* Section container */}
         <GlassSurface
           width="100%"
           height="auto"
@@ -36,89 +44,59 @@ export function ProblemSolution() {
           saturation={1.1}
           className="px-8 py-16 md:px-16"
         >
-          {/* Problem Section */}
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="mb-20 text-center"
+            className="mb-16 text-center"
           >
             {/* Badge */}
             <span className="mb-8 inline-block rounded-full border border-white/[0.15] bg-white/5 px-4 py-2 text-sm text-gray-300">
               Problem
             </span>
 
-            {/* Headline */}
-            <h2 className="mb-8 font-serif text-3xl italic leading-tight text-white md:text-5xl">
-              Employees spent 25% of their work time searching for data*
+            <h2 className="text-3xl text-white md:text-5xl">
+              AI needs foundations.
+              <br />
+              <span className="font-serif italic">Your data is scattered.</span>
+              <br />
+              Your tool stack is expensive.
             </h2>
-
-            {/* Info list */}
-            <div className="mb-8 space-y-2 text-lg text-white md:text-xl">
-              <p>information lives everywhere, example:</p>
-              <p>- Salesforce has customer history</p>
-              <p>- Google Drive has that Q2 analysis</p>
-              <p>- Slack has the discussion about pricing</p>
-              <p>- Someone&apos;s Excel has actual numbers</p>
-            </div>
-
-            {/* Stat */}
-            <p className="mb-4 text-xl font-medium text-white md:text-2xl">
-              Finding anything takes 8 searches. Getting the right answer? Another
-              30 minutes.
+            <p className="mt-6 text-lg text-gray-400 md:text-xl">
+              We fix this.
             </p>
+          </motion.div>
 
-            {/* Citation */}
-            <p className="text-xs text-gray-500">
-              (*{" "}
-              <a
-                href="https://www.hcamag.com/us/specialization/employee-engagement/employees-waste-at-least-two-hours-a-day-searching-for-what-they-need-to-work/324737"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-gray-400"
+          {/* Problem Cards Grid */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {problems.map((problem, index) => (
+              <motion.div
+                key={problem.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                https://www.hcamag.com/us/specialization/employee-engagement/employees-waste-at-least-two-hours-a-day-searching-for-what-they-need-to-work/324737
-              </a>
-              )
-            </p>
-          </motion.div>
-
-          {/* Solution Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            {/* Badge */}
-            <span className="mb-12 inline-block rounded-full border border-white/[0.15] bg-white/5 px-4 py-2 text-sm text-gray-300">
-              Solution
-            </span>
-
-            {/* Solution Cards */}
-            <div className="grid gap-8 md:grid-cols-3">
-              {solutions.map((solution, index) => (
-                <motion.div
-                  key={solution.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center">
-                    <solution.icon className="h-10 w-10 text-white" strokeWidth={1.5} />
+                <HoverCard scaleOnHover={1.02} rotateAmplitude={6}>
+                  <div className="flex h-48 flex-col items-center justify-center rounded-xl border border-white/[0.1] bg-white/[0.03] p-6 text-center">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center">
+                      <problem.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-2 text-lg font-medium text-white">
+                      {problem.title}
+                    </h3>
+                    {problem.description && (
+                      <p className="text-sm leading-relaxed text-gray-400">
+                        {problem.description}
+                      </p>
+                    )}
                   </div>
-                  <h3 className="mb-2 text-xl font-medium text-white">
-                    {solution.title}
-                  </h3>
-                  <p className="text-gray-400">{solution.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                </HoverCard>
+              </motion.div>
+            ))}
+          </div>
         </GlassSurface>
       </div>
     </section>

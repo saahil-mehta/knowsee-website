@@ -4,3 +4,6 @@ export { ProblemSolution } from "./problem-solution";
 export { HowItWorks } from "./how-it-works";
 export { Pricing } from "./pricing";
 export { Footer } from "./footer";
+export { Silk } from "./silk";
+export { TiltedCard } from "./tilted-card";
+export { Typewriter } from "./typewriter";

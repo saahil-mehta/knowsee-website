@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import { AlertTriangle, TrendingUp, Clock, UserX } from "lucide-react";
-import GlassSurface from "./glass-surface";
-import { HoverCard } from "./hover-card";
 
 const problems = [
   {
@@ -35,15 +33,7 @@ export function ProblemSolution() {
   return (
     <section className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <GlassSurface
-          width="100%"
-          height="auto"
-          borderRadius={32}
-          backgroundOpacity={0.2}
-          blur={12}
-          saturation={1.1}
-          className="px-8 py-16 md:px-16"
-        >
+        <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] px-8 py-16 md:px-16">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,26 +68,23 @@ export function ProblemSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex h-48 flex-col items-center justify-center rounded-xl border border-white/[0.1] bg-white/[0.03] p-6 text-center transition-colors hover:border-[#6214d9]/50"
               >
-                <HoverCard scaleOnHover={1.02} rotateAmplitude={6}>
-                  <div className="flex h-48 flex-col items-center justify-center rounded-xl border border-white/[0.1] bg-white/[0.03] p-6 text-center">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center">
-                      <problem.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="mb-2 text-lg font-medium text-white">
-                      {problem.title}
-                    </h3>
-                    {problem.description && (
-                      <p className="text-sm leading-relaxed text-gray-400">
-                        {problem.description}
-                      </p>
-                    )}
-                  </div>
-                </HoverCard>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center">
+                  <problem.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="mb-2 text-lg font-medium text-white">
+                  {problem.title}
+                </h3>
+                {problem.description && (
+                  <p className="text-sm leading-relaxed text-gray-400">
+                    {problem.description}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>
-        </GlassSurface>
+        </div>
       </div>
     </section>
   );

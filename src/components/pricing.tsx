@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const combinedFeatures = [
-  "Dedicated engineering capacity — equivalent to a full-time hire",
+  "Dedicated engineering capacity, equivalent to a full-time hire",
   "Guaranteed monthly deliverables",
   "Knowsee deployed on your infrastructure",
   "Connected to all your data sources",
@@ -17,7 +17,7 @@ const combinedFeatures = [
 ];
 
 const engineeringFeatures = [
-  "Dedicated engineering capacity — equivalent to a full-time hire",
+  "Dedicated engineering capacity, equivalent to a full-time hire",
   "Guaranteed monthly deliverables",
   "Pipeline development and optimisation",
   "Architecture design and review",
@@ -130,7 +130,7 @@ export function Pricing() {
             <div className="relative">
               <div className="mb-6">
                 <h3 className="text-xl font-medium text-white">Engineering</h3>
-                <p className="mt-1 text-sm text-gray-400">Dedicated engineering capacity — equivalent to a full-time hire</p>
+                <p className="mt-1 text-sm text-gray-400">Dedicated engineering capacity, equivalent to a full-time hire</p>
               </div>
 
               <div className="mb-6">

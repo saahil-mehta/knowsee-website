@@ -1,14 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Silk } from "./silk";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Background gradient */}
+      {/* Silk background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a2e] via-[#0f0618] to-[#0a0a0a]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+        <Silk
+          color="#1a0a2e"
+          speed={2}
+          scale={1.5}
+          noiseIntensity={0.8}
+          rotation={0.2}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0a0a]" />
       </div>
 
       {/* Hero content */}

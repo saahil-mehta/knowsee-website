@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Silk } from "./silk";
-import { TiltedCard } from "./tilted-card";
 
 export function Hero() {
   return (
@@ -70,35 +69,24 @@ export function Hero() {
         </div>
       </div>
 
-      {/* 3D Product Showcase with Interactive Tilt */}
+      {/* Product Showcase */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         className="relative mx-auto max-w-6xl px-6 pb-20"
       >
-        <TiltedCard
-          scaleOnHover={1.02}
-          rotateAmplitude={8}
-          showMobileWarning={false}
-        >
-          {/* Glow effect behind the video */}
-          <div className="absolute -inset-4 rounded-2xl bg-[#6214d9]/20 blur-3xl" />
+        {/* Glow effect behind the video */}
+        <div className="absolute -inset-4 rounded-2xl bg-[#6214d9]/20 blur-3xl" />
 
-          {/* Video container */}
-          <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-2xl shadow-black/50">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full"
-            >
-              <source src="/knowsee-cropped.webm" type="video/webm" />
-              <source src="/knowsee-cropped.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </TiltedCard>
+        {/* Demo container */}
+        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black/50 shadow-2xl shadow-black/50">
+          <img
+            src="/knowsee.gif"
+            alt="Knowsee demo"
+            className="w-full"
+          />
+        </div>
 
         {/* Fade to background gradient */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />

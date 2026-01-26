@@ -18,11 +18,11 @@ export function Footer() {
             <a href="#process" className="hover:text-white">
               Process
             </a>
-            <a href="#features" className="hover:text-white">
-              Features
-            </a>
             <a href="#pricing" className="hover:text-white">
               Pricing
+            </a>
+            <a href="#about" className="hover:text-white">
+              About
             </a>
             <a href="mailto:hello@knowsee.co.uk" className="hover:text-white">
               Contact

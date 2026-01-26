@@ -29,6 +29,7 @@ export function TiltedCard({
   showShimmerBorder = true,
 }: TiltedCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const rotateX = useSpring(useMotionValue(0), springValues);
@@ -36,9 +37,9 @@ export function TiltedCard({
   const scale = useSpring(1, springValues);
 
   function handleMouse(e: React.MouseEvent<HTMLDivElement>) {
-    if (!ref.current) return;
+    if (!rectRef.current) return;
 
-    const rect = ref.current.getBoundingClientRect();
+    const rect = rectRef.current;
     const offsetX = e.clientX - rect.left - rect.width / 2;
     const offsetY = e.clientY - rect.top - rect.height / 2;
 
@@ -50,11 +51,16 @@ export function TiltedCard({
   }
 
   function handleMouseEnter() {
+    // Capture rect once on enter to avoid feedback loop from transformed bounds
+    if (ref.current) {
+      rectRef.current = ref.current.getBoundingClientRect();
+    }
     scale.set(scaleOnHover);
     setIsHovered(true);
   }
 
   function handleMouseLeave() {
+    rectRef.current = null;
     scale.set(1);
     rotateX.set(0);
     rotateY.set(0);

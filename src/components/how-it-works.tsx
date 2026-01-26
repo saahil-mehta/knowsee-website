@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Wrench, TrendingUp, MessagesSquare } from "lucide-react";
+import { Search, Rocket, Wrench, Shield } from "lucide-react";
 
 const steps = [
   {
-    icon: Clock,
+    icon: Search,
     title: "Audit",
     description:
-      "Think systems. Identify every source. Map what connects where. Find the mess.",
+      "We review your data architecture and deliver actionable recommendations. Free.",
+  },
+  {
+    icon: Rocket,
+    title: "Onboard",
+    description:
+      "Knowsee deployed to your cloud infrastructure. Your data stays secure in your own environment.",
   },
   {
     icon: Wrench,
-    title: "Custom Engineering",
+    title: "Build",
     description:
-      "Connect sources. Clean data. Structure for AI comprehension. This is data engineering. Built to best practices. Tested thoroughly.",
+      "Instagram to BigQuery. Salesforce to Snowflake. Stripe to your warehouse. HubSpot to Redshift. Any source, any destination.",
   },
   {
-    icon: TrendingUp,
-    title: "AI Engineering",
+    icon: Shield,
+    title: "Maintain",
     description:
-      "Train on your knowledge. Test with real questions. Tune for accuracy.",
-  },
-  {
-    icon: MessagesSquare,
-    title: "Ask questions",
-    description:
-      "Deployment. Usage. Continuous refinement based on real feedback",
+      "Monitoring, updates, and support. Governed by strict SLAs and an experienced team of engineers (human and AI) led by Saahil.",
   },
 ];
 
@@ -50,8 +50,8 @@ export function HowItWorks() {
             </span>
 
             <h2 className="text-3xl text-white md:text-5xl">
-              Your knowledge,{" "}
-              <span className="font-serif italic">accessible effortlessly</span>.
+              From scattered data to{" "}
+              <span className="font-serif italic">AI insights</span>.
             </h2>
           </motion.div>
 
@@ -88,10 +88,12 @@ export function HowItWorks() {
             className="mt-16 text-center"
           >
             <a
-              href="#contact"
+              href="https://calendly.com/saahil_mehta/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-full bg-[#6214d9] px-10 py-4 text-base font-medium text-white transition-all hover:bg-[#7928e8]"
             >
-              Book a 30-min call
+              Book a free audit
             </a>
           </motion.div>
         </div>

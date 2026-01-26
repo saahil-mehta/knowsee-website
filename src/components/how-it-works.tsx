@@ -1,29 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Rocket, Wrench, Shield } from "lucide-react";
+import { LottieIcon } from "./lottie-icon";
 
 const steps = [
   {
-    icon: Search,
+    icon: "/lotties/search.json",
     title: "Audit",
     description:
       "We review your data architecture and deliver actionable recommendations. Free.",
   },
   {
-    icon: Rocket,
+    icon: "/lotties/onboard.json",
     title: "Onboard",
     description:
       "Knowsee deployed to your cloud infrastructure. Your data stays secure in your own environment.",
   },
   {
-    icon: Wrench,
+    icon: "/lotties/cog-settings.json",
     title: "Build",
     description:
       "Instagram to BigQuery. Salesforce to Snowflake. Stripe to your warehouse. HubSpot to Redshift. Any source, any destination.",
   },
   {
-    icon: Shield,
+    icon: "/lotties/maintain.json",
     title: "Maintain",
     description:
       "Monitoring, updates, and support. Governed by strict SLAs and an experienced team of engineers (human and AI) led by Saahil.",
@@ -66,8 +66,8 @@ export function HowItWorks() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center">
-                  <step.icon className="h-10 w-10 text-white" strokeWidth={1.5} />
+                <div className="mx-auto mb-6 h-16 w-16">
+                  <LottieIcon src={step.icon} className="h-full w-full" />
                 </div>
                 <h3 className="mb-3 text-xl font-medium text-white">
                   {step.title}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LottieIcon } from "./lottie-icon";
 
 export function About() {
   return (
@@ -16,6 +17,10 @@ export function About() {
           <span className="mb-8 inline-block rounded-full border border-white/[0.15] bg-white/5 px-4 py-2 text-sm text-gray-300">
             About
           </span>
+
+          <div className="mx-auto mb-6 h-16 w-16">
+            <LottieIcon src="/lotties/user.json" className="h-full w-full" />
+          </div>
 
           <h2 className="text-3xl text-white md:text-5xl">
             Built by <span className="font-serif italic">Saahil Mehta</span>.

@@ -1,28 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, TrendingUp, Clock, UserX } from "lucide-react";
+import { LottieIcon } from "./lottie-icon";
 
 const problems = [
   {
-    icon: AlertTriangle,
+    icon: "/lotties/pipelines-break.json",
     title: "Pipelines break silently.",
     description:
       "You find out when a CxO asks why the numbers don't match.",
   },
   {
-    icon: TrendingUp,
+    icon: "/lotties/tools-charge.json",
     title: "Your data tools charge per connection.",
     description:
       "Your cloud bill grows every month. Nobody knows why.",
   },
   {
-    icon: Clock,
-    title: "Adding a new data source takes 6 weeks, 3 meetings, and a prayer.",
-    description: "",
+    icon: "/lotties/clock.json",
+    title: "Adding a new data source is time-consuming.",
+    description: "New sources sit in the backlog. For weeks/months.",
   },
   {
-    icon: UserX,
+    icon: "/lotties/ex-employee.json",
     title: "An ex-employee asks you to delete their data.",
     description:
       "You're not even sure where it all lives.",
@@ -70,8 +70,8 @@ export function ProblemSolution() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex h-48 flex-col items-center justify-center rounded-xl border border-white/[0.1] bg-white/[0.03] p-6 text-center transition-colors hover:border-[#6214d9]/50"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center">
-                  <problem.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+                <div className="mb-4 h-12 w-12">
+                  <LottieIcon src={problem.icon} className="h-full w-full" />
                 </div>
                 <h3 className="mb-2 text-lg font-medium text-white">
                   {problem.title}

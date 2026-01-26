@@ -4,6 +4,7 @@ import {
   ProblemSolution,
   HowItWorks,
   Pricing,
+  About,
   Footer,
 } from "@/components";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <ProblemSolution />
         <HowItWorks />
         <Pricing />
+        <About />
       </main>
       <Footer />
     </>

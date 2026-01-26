@@ -63,13 +63,6 @@ export function Pricing() {
               {/* Title */}
               <h3 className="mb-4 text-lg font-medium text-white">Data Engineering</h3>
 
-              {/* Price */}
-              <div className="mb-2">
-                <span className="text-2xl text-gray-500 line-through">£2,999</span>
-                <span className="ml-2 text-5xl font-medium text-white">£2,499</span>
-                <span className="text-xl text-gray-400">/month</span>
-              </div>
-
               <p className="mb-6 text-gray-400">
                 Flat-rate engineering. No per-connector fees.
               </p>
@@ -112,13 +105,6 @@ export function Pricing() {
             <div className="relative">
               {/* Title */}
               <h3 className="mb-4 text-lg font-medium text-white">Knowsee</h3>
-
-              {/* Price */}
-              <div className="mb-2">
-                <span className="text-2xl text-gray-500 line-through">£1,499</span>
-                <span className="ml-2 text-5xl font-medium text-white">£999</span>
-                <span className="text-xl text-gray-400">/month</span>
-              </div>
 
               <p className="mb-6 text-gray-400">
                 AI that runs on your infrastructure.

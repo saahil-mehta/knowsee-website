@@ -1,5 +1,6 @@
 export { Navigation } from "./navigation";
 export { Hero } from "./hero";
+export { BrandLogos } from "./brand-logos";
 export { ProblemSolution } from "./problem-solution";
 export { HowItWorks } from "./how-it-works";
 export { Pricing } from "./pricing";

@@ -65,8 +65,8 @@ export function BrandLogos() {
   return (
     <section className="py-16 overflow-hidden">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="mb-10 text-center text-lg text-gray-400">
-          Built reliable data foundations for
+        <p className="mb-10 text-center text-xl text-white md:text-2xl">
+          Built <span className="font-serif italic">reliable</span> data foundations for
         </p>
       </div>
 

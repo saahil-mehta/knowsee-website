@@ -28,7 +28,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="mb-8 text-3xl font-serif italic font-medium leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl"
           >
-            AI is only as good as your data
+            Stop duct-taping your data.
           </motion.h1>
 
           {/* Subheadline */}
@@ -38,9 +38,10 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-400 md:text-2xl"
           >
-            Engineering that builds foundations.
-            <br className="hidden sm:block" />
-            AI that delivers insights.
+            We become your data team.
+            <br />
+            Fix the foundations, connect the sources, and give you an AI that
+            answers questions from all of it.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -59,10 +60,10 @@ export function Hero() {
               Get a free audit
             </a>
             <a
-              href="#pricing"
+              href="#features"
               className="w-full rounded-full border border-white/[0.15] px-10 py-4 text-base text-white transition-all hover:border-white/30 hover:bg-white/5 sm:w-auto"
             >
-              View pricing
+              See how it works
             </a>
           </motion.div>
         </div>

@@ -6,26 +6,26 @@ import { LottieIcon } from "./lottie-icon";
 const problems = [
   {
     icon: "/lotties/pipelines-break.json",
-    title: "Pipelines break silently.",
+    title: "You spend Monday mornings pulling reports.",
     description:
-      "You find out when a CxO asks why the numbers don't match.",
+      "Copying data between tools, building slides, chasing numbers. Every week.",
   },
   {
     icon: "/lotties/tools-charge.json",
-    title: "Your data tools charge per connection.",
+    title: "Your numbers never match.",
     description:
-      "Your cloud bill grows every month. Nobody knows why.",
+      "Google Ads says one thing. Your CRM says another. Nobody knows which is right.",
   },
   {
     icon: "/lotties/clock.json",
-    title: "Adding a new data source is time-consuming.",
-    description: "New sources sit in the backlog. For weeks/months.",
+    title: "You're paying for tools you barely use.",
+    description: "Subscriptions stack up. Half your team uses spreadsheets anyway.",
   },
   {
     icon: "/lotties/ex-employee.json",
-    title: "An ex-employee asks you to delete their data.",
+    title: "You know AI could help. You just can't start.",
     description:
-      "You're not even sure where it all lives.",
+      "No clean data, no engineering team, no time to figure it out.",
   },
 ];
 
@@ -48,11 +48,7 @@ export function ProblemSolution() {
             </span>
 
             <h2 className="text-3xl text-white md:text-5xl">
-              AI needs foundations.
-              <br />
-              <span className="font-serif italic">Your data is scattered.</span>
-              <br />
-              Your tool stack is expensive.
+              <span className="font-serif italic">This is costing you.</span>
             </h2>
             <p className="mt-6 text-lg text-gray-400 md:text-xl">
               We fix this.

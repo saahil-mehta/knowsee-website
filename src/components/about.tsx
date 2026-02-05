@@ -26,8 +26,13 @@ export function About() {
             Built by <span className="font-serif italic">Saahil Mehta</span>.
           </h2>
 
-          <p className="mt-6 text-lg text-gray-400">
-            Learn more about me at{" "}
+          <p className="mx-auto mt-6 max-w-xl text-lg text-gray-400">
+            Former agency-side data engineer at Publicis and WPP.
+            <br />
+            Now building the data team that small companies actually need.
+          </p>
+          <p className="mt-4 text-lg text-gray-400">
+            Learn more at{" "}
             <a
               href="https://saahil.co.uk"
               target="_blank"

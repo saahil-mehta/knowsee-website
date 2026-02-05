@@ -93,7 +93,7 @@ export function HowItWorks() {
               rel="noopener noreferrer"
               className="inline-block rounded-full bg-[#6214d9] px-10 py-4 text-base font-medium text-white transition-all hover:bg-[#7928e8]"
             >
-              Book a free audit
+              Start with an audit
             </a>
           </motion.div>
         </div>

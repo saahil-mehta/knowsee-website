@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const engineeringFeatures = [
-  "Dedicated engineering capacity — pipelines, migrations, architecture",
-  "Greenfield and brownfield — new builds or fixing what's broken",
-  "Fast turnarounds — human engineers + AI agents working in parallel",
-  "Guaranteed monthly deliverables",
+  "Full-time engineering value, without the full-time hire",
+  "New builds or fixing what's broken",
+  "Human-led engineering, AI-accelerated. Sandboxed, auditable, GDPR-compliant.",
+  "Guaranteed deliverables, tracked transparently",
   "24-hour response SLA",
 ];
 
 const knowseeFeatures = [
-  "AI built for you, deployed on your infrastructure",
+  "AI deployed on your infrastructure",
   "Connected to all your data sources (yes, all of them)",
   "Unlimited users, unlimited queries",
-  "Google Search grounding for accurate answers",
-  "No data leaves your cloud (GDPR + SecOps best practices)",
+  "Answers validated against live web data",
+  "Your data stays in your cloud. Always.",
 ];
 
 export function Pricing() {
@@ -39,7 +39,7 @@ export function Pricing() {
             Your data team, <span className="font-serif italic">on retainer</span>.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
-            Engineering capacity, AI that understands your data, and none of the hiring headaches.
+            Everything you need to fix your data and keep it running. No hiring, no overhead.
           </p>
         </motion.div>
 
@@ -77,7 +77,7 @@ export function Pricing() {
               rel="noopener noreferrer"
               className="mb-10 block w-full rounded-full bg-[#6214d9] py-4 text-center font-medium text-white transition-all hover:bg-[#7c3aed]"
             >
-              Book a free audit
+              Book a call
             </a>
 
             {/* Features - Two columns */}
@@ -115,9 +115,9 @@ export function Pricing() {
 
             {/* Commitment note */}
             <p className="mt-10 text-center text-sm text-gray-500">
-              Cancel within 30 days if it's not right.
+              30-day opt-out. If it&apos;s not right, walk away.
                 <br />
-                After that, 6-month minimum — we want to build a lasting relationship.
+                After that, 6-month commitment because results compound over time.
             </p>
           </div>
         </motion.div>

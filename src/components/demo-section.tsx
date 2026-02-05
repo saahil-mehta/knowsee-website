@@ -6,21 +6,21 @@ import { motion, AnimatePresence } from "framer-motion";
 const demos = [
   {
     video: "/demos/demo-query.mp4",
-    headline: "Context-aware. Transparent.",
+    headline: "Ask your data anything.",
     description:
-      "Ask in plain English. Knowsee understands your schema, generates SQL, and shows every step — attempts, bytes scanned, query logic. No black boxes.",
+      "Type a question in plain English. Knowsee pulls from all your connected sources and shows you the answer, with full working so you can trust it.",
   },
   {
     video: "/demos/demo-visuals.mp4",
-    headline: "Structure from chaos.",
+    headline: "Reports that build themselves.",
     description:
-      "Raw warehouse data becomes clear visuals in seconds. No dashboards to build, no analysts to brief.",
+      "No more copy-pasting into slides. Ask a question, get a visual. Ready to share with clients or your team in seconds.",
   },
   {
     video: "/demos/demo-grounding.mp4",
-    headline: "Your data meets the world's.",
+    headline: "Stop guessing if your numbers are good.",
     description:
-      "Query BigQuery, get your answer, then ground it with live Google Search. One conversation, multiple sources, complete context.",
+      "Your CTR, your averages, your pipeline metrics, instantly validated against live sources. Knowsee can check your data against the real world so you don't have to.",
   },
 ];
 
@@ -129,13 +129,16 @@ export function DemoSection() {
               className="mt-16 text-center"
             >
               <h3 className="mb-4 text-2xl text-white md:text-3xl">
-                And that&apos;s just the{" "}
-                <span className="font-serif italic">beginning</span>.
+                And this is just what the{" "}
+                <span className="font-serif italic">AI does</span>.
+                <br />
+                Behind it, we&apos;re your{" "}
+                <span className="font-serif italic">engineering team</span>.
               </h3>
               <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-gray-400 md:text-lg">
-                Beyond the AI platform, we handle your data engineering, migrations, and tech debt.
+                Building pipelines, connecting sources, and keeping everything running.
                 <br />
-                No hiring, no overhead, a full super-efficient technical team on retainer.
+                One retainer. No hiring.
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -145,7 +148,7 @@ export function DemoSection() {
                   rel="noopener noreferrer"
                   className="inline-block rounded-full bg-[#6214d9] px-8 py-3 text-sm font-medium text-white transition-all hover:bg-[#7928e8]"
                 >
-                  Free infra audit
+                  Book a call
                 </a>
                 <a
                   href="#pricing"

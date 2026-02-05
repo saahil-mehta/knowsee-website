@@ -36,10 +36,10 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Knowsee | AI Intranet Knowledgebase",
+  title: "Knowsee | Data Engineering and AI",
   description:
-    "Turn years of scattered company knowledge into instant, intelligent answers with best-in-class security.",
-  keywords: ["AI", "knowledge base", "intranet", "enterprise search", "RAG"],
+    "We become your data team. Fix the foundations, connect the sources, and give you an AI that answers questions from all of it.",
+  keywords: ["data engineering", "AI", "agency data", "reporting automation", "data pipelines"],
 };
 
 export default function RootLayout({

@@ -44,7 +44,7 @@ export function DemoSection() {
 
   return (
     <>
-      <section id="demo" className="px-6 py-24">
+      <section id="features" className="px-6 py-24">
         <div className="mx-auto max-w-5xl">
           <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] px-8 py-16 md:px-16">
             {/* Section Header */}
@@ -56,7 +56,7 @@ export function DemoSection() {
               className="mb-16 text-center"
             >
               <span className="mb-8 inline-block rounded-full border border-white/[0.15] bg-white/5 px-4 py-2 text-sm text-gray-300">
-                Capabilities
+                Features
               </span>
 
               <h2 className="text-3xl text-white md:text-5xl">

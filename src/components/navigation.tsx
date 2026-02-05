@@ -7,6 +7,7 @@ import GlassSurface from "./glass-surface";
 
 const navItems = [
   { label: "Home", href: "#" },
+  { label: "Features", href: "#features" },
   { label: "Process", href: "#process" },
   { label: "Pricing", href: "#pricing" },
   { label: "About", href: "#about" },

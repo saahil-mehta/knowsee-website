@@ -15,6 +15,9 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+            <a href="#features" className="hover:text-white">
+              Features
+            </a>
             <a href="#process" className="hover:text-white">
               Process
             </a>

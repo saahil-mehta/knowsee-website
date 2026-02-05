@@ -2,6 +2,7 @@ export { Navigation } from "./navigation";
 export { Hero } from "./hero";
 export { BrandLogos } from "./brand-logos";
 export { ProblemSolution } from "./problem-solution";
+export { DemoSection } from "./demo-section";
 export { HowItWorks } from "./how-it-works";
 export { Pricing } from "./pricing";
 export { About } from "./about";

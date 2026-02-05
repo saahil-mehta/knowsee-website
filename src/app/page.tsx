@@ -3,6 +3,7 @@ import {
   Hero,
   BrandLogos,
   ProblemSolution,
+  DemoSection,
   HowItWorks,
   Pricing,
   About,
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <BrandLogos />
         <ProblemSolution />
+        <DemoSection />
         <HowItWorks />
         <Pricing />
         <About />

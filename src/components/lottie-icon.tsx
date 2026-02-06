@@ -9,12 +9,12 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 interface LottieIconProps {
   src: string;
   className?: string;
-  delay?: number;
 }
 
-export function LottieIcon({ src, className = "", delay = 500 }: LottieIconProps) {
+export function LottieIcon({ src, className = "" }: LottieIconProps) {
   const [animationData, setAnimationData] = useState(null);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const directionRef = useRef<1 | -1>(1);
 
   useEffect(() => {
     fetch(src)
@@ -25,8 +25,10 @@ export function LottieIcon({ src, className = "", delay = 500 }: LottieIconProps
 
   const handleComplete = () => {
     setTimeout(() => {
-      lottieRef.current?.goToAndPlay(0);
-    }, delay);
+      directionRef.current = directionRef.current === 1 ? -1 : 1;
+      lottieRef.current?.setDirection(directionRef.current);
+      lottieRef.current?.play();
+    }, 800);
   };
 
   if (!animationData) {

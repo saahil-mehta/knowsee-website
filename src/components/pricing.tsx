@@ -1,22 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { LottieIcon } from "./lottie-icon";
+import {
+  Users,
+  Wrench,
+  ClipboardCheck,
+  Clock,
+  Bot,
+  ShieldCheck,
+  Settings,
+  Database,
+  Infinity,
+  Globe,
+  Cloud,
+  KeyRound,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const engineeringFeatures = [
-  "Full-time engineering value, without the full-time hire",
-  "New builds or fixing what's broken",
-  "Human-led engineering, AI-accelerated. Sandboxed, auditable, GDPR-compliant.",
-  "Guaranteed deliverables, tracked transparently",
-  "24-hour response SLA",
+interface Feature {
+  icon: LucideIcon;
+  text: string;
+}
+
+const engineeringFeatures: Feature[] = [
+  { icon: Users, text: "Full-time engineering value, without the full-time hire" },
+  { icon: Wrench, text: "New builds or fixing what's broken" },
+  { icon: ClipboardCheck, text: "Guaranteed deliverables, tracked transparently" },
+  { icon: Clock, text: "24-hour response SLA" },
+  { icon: Bot, text: "Real engineers + AI agents, working in unison. Nothing ships without review." },
+  { icon: ShieldCheck, text: "Every workflow is sandboxed, auditable, and GDPR-compliant" },
 ];
 
-const knowseeFeatures = [
-  "AI deployed on your infrastructure",
-  "Connected to all your data sources (yes, all of them)",
-  "Unlimited users, unlimited queries",
-  "Answers validated against live web data",
-  "Your data stays in your cloud. Always.",
+const knowseeFeatures: Feature[] = [
+  { icon: Settings, text: "Fully managed. We deploy, maintain, and update it for you." },
+  { icon: Database, text: "Connected to all your data sources (yes, all of them)" },
+  { icon: Infinity, text: "Unlimited users, unlimited queries" },
+  { icon: Globe, text: "Answers validated against live web data" },
+  { icon: Cloud, text: "Your data stays in your cloud. Always." },
+  { icon: KeyRound, text: "Want even more control? Opt for an open-weight model. The model is yours too." },
 ];
 
 export function Pricing() {
@@ -35,8 +57,13 @@ export function Pricing() {
             Pricing
           </span>
 
+          <div className="mx-auto mb-6 h-16 w-16">
+            <LottieIcon src="/lotties/pricing.json" className="h-full w-full" />
+          </div>
+
           <h2 className="text-3xl text-white md:text-5xl">
-            Your data team, <span className="font-serif italic">on retainer</span>.
+            Engineering and AI.{" "}
+            <span className="font-serif italic">One monthly price.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
             Everything you need to fix your data and keep it running. No hiring, no overhead.
@@ -60,7 +87,7 @@ export function Pricing() {
             {/* Price */}
             <div className="mb-8 text-center">
               <div className="text-4xl font-medium text-white md:text-5xl">
-                £2,699
+                £2,799
                 <span className="text-xl font-normal text-gray-400">/month</span>
               </div>
               <p className="mt-2 text-gray-500">
@@ -84,14 +111,14 @@ export function Pricing() {
             <div className="grid gap-8 md:grid-cols-2">
               {/* Engineering */}
               <div>
-                <h3 className="mb-4 text-2xl text-white">
+                <h3 className="mb-6 text-2xl text-white">
                   Engineering
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {engineeringFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm text-white">
-                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
-                      {feature}
+                    <li key={feature.text} className="flex items-start gap-3 text-sm text-white">
+                      <feature.icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
+                      {feature.text}
                     </li>
                   ))}
                 </ul>
@@ -99,14 +126,14 @@ export function Pricing() {
 
               {/* Knowsee */}
               <div>
-                <h3 className="mb-4 text-2xl text-white">
+                <h3 className="mb-6 text-2xl text-white">
                   <span className="font-serif">Know</span><span className="font-serif italic">see</span> <span className="text-lg text-gray-500">(included)</span>
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {knowseeFeatures.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm text-white">
-                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
-                      {feature}
+                    <li key={feature.text} className="flex items-start gap-3 text-sm text-white">
+                      <feature.icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
+                      {feature.text}
                     </li>
                   ))}
                 </ul>

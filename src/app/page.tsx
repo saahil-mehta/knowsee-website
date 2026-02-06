@@ -5,6 +5,7 @@ import {
   ProblemSolution,
   DemoSection,
   HowItWorks,
+  AuditSection,
   Pricing,
   About,
   Footer,
@@ -20,6 +21,7 @@ export default function Home() {
         <ProblemSolution />
         <DemoSection />
         <HowItWorks />
+        <AuditSection />
         <Pricing />
         <About />
       </main>

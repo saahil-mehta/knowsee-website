@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { LottieIcon } from "./lottie-icon";
+import { BrandLogos } from "./brand-logos";
 import {
   Users,
   Wrench,
@@ -43,8 +44,11 @@ const knowseeFeatures: Feature[] = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="px-6 py-24">
-      <div className="mx-auto max-w-3xl">
+    <section id="pricing" className="py-24">
+      {/* Brand logos as trust signal before price */}
+      <BrandLogos />
+
+      <div className="mx-auto max-w-3xl px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -142,9 +146,10 @@ export function Pricing() {
 
             {/* Commitment note */}
             <p className="mt-10 text-center text-sm text-gray-500">
-              30-day opt-out. If it&apos;s not right, walk away.
-                <br />
-                After that, 6-month commitment because results compound over time.
+              Start with a 30-day pilot. No strings attached. If it&apos;s not right, walk away.
+            </p>
+            <p className="mt-2 text-center text-xs text-gray-600">
+              Save 15% with an annual commitment.
             </p>
           </div>
         </motion.div>

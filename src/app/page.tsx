@@ -1,7 +1,6 @@
 import {
   Navigation,
   Hero,
-  BrandLogos,
   ProblemSolution,
   DemoSection,
   HowItWorks,
@@ -17,7 +16,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <BrandLogos />
         <ProblemSolution />
         <DemoSection />
         <HowItWorks />

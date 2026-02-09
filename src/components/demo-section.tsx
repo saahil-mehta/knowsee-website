@@ -136,7 +136,8 @@ export function DemoSection() {
                 <span className="font-serif italic">engineering team</span>.
               </h3>
               <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed text-gray-400 md:text-lg">
-                Building pipelines, connecting sources, and keeping everything running.
+                Cloud, data engineering, and LLMs. We build the whole stack,
+                connect your sources, and keep everything running.
                 <br />
                 One retainer. No hiring.
               </p>

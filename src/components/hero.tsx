@@ -28,7 +28,9 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="mb-8 text-3xl font-serif italic font-medium leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl"
           >
-            Stop duct-taping your data.
+            AI that runs on your data.
+            <br />
+            Engineers who make it happen.
           </motion.h1>
 
           {/* Subheadline */}
@@ -36,12 +38,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-400 md:text-2xl"
+            className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl"
           >
-            We become your data team.
-            <br />
-            Fix the foundations, connect the sources, and give you an AI that
-            answers questions from all of it.
+            We fix the foundations, connect the sources, and give you an
+            AI that answers questions from all of it.
           </motion.p>
 
           {/* CTA Buttons */}

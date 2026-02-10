@@ -6,21 +6,21 @@ import { LottieIcon } from "./lottie-icon";
 const auditItems = [
   {
     icon: "/lotties/data-mapped.json",
-    title: "Your data, mapped.",
+    title: "Complete data map",
     description:
-      "We trace every source, every tool, every spreadsheet. You get a clear picture of where your data lives, how it flows, and where it breaks.",
+      "A complete map of every data source, tool, and spreadsheet your team touches.",
   },
   {
     icon: "/lotties/money-losing.json",
-    title: "Where you're losing money.",
+    title: "Cost analysis",
     description:
-      "Tool overlap, unused subscriptions, manual work that should be automated. We show you exactly what's costing you and how to fix it.",
+      "A cost analysis showing where you're overpaying for tools or losing time to manual work.",
   },
   {
     icon: "/lotties/what-good.json",
-    title: "What good looks like.",
+    title: "Recommended architecture",
     description:
-      "A recommended architecture showing how your data should flow, what to connect, and the quality improvements you'd see.",
+      "A recommended architecture — how your data should flow, what to connect, and what to automate.",
   },
 ];
 
@@ -42,9 +42,9 @@ export function AuditSection() {
             </span>
 
             <h2 className="text-3xl text-white md:text-5xl">
-              Here&apos;s what you get.{" "}
+              What you&apos;ll get.{" "}
               <span className="font-serif italic">
-                Before you pay a penny.
+                Before you pay anything.
               </span>
             </h2>
           </motion.div>
@@ -81,6 +81,9 @@ export function AuditSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-16 text-center"
           >
+            <p className="mb-8 text-sm text-gray-400">
+              It takes about a week. You keep the output whether you work with us or not.
+            </p>
             <a
               href="https://calendly.com/saahil_mehta/30min"
               target="_blank"

@@ -25,7 +25,7 @@ interface Feature {
 }
 
 const engineeringFeatures: Feature[] = [
-  { icon: Users, text: "Full-time engineering value, without the full-time hire" },
+  { icon: Users, text: "Dedicated engineering capacity, fractional commitment" },
   { icon: Wrench, text: "New builds or fixing what's broken" },
   { icon: ClipboardCheck, text: "Guaranteed deliverables, tracked transparently" },
   { icon: Clock, text: "24-hour response SLA" },
@@ -74,83 +74,114 @@ export function Pricing() {
           </p>
         </motion.div>
 
-        {/* Single Pricing Card */}
+        {/* Stacked Pricing Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative overflow-hidden rounded-3xl border border-[#6214d9]/30 bg-white/[0.02] p-8 md:p-10"
+          className="relative"
         >
-          {/* Purple orb decoration */}
-          <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96">
-            <div className="h-full w-full rounded-full bg-[#6214d9]/30 blur-3xl" />
+          {/* Pilot card — peeks out behind the main card */}
+          <div className="mx-2 rounded-3xl border border-white/10 bg-white/[0.04] px-8 pb-20 pt-6 md:px-10">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="text-center sm:text-left">
+                <span className="text-xs font-medium uppercase tracking-wider text-gray-400">
+                  30-day pilot
+                </span>
+                <div className="mt-1 text-2xl font-medium text-white md:text-3xl">
+                  £1,500
+                </div>
+              </div>
+              <p className="max-w-xs text-center text-sm text-gray-400 sm:text-left">
+                Same features. See if we&apos;re the right fit.
+              </p>
+              <a
+                href="https://calendly.com/saahil_mehta/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 rounded-full border border-[#6214d9] px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#6214d9]/20"
+              >
+                Start pilot
+              </a>
+            </div>
           </div>
 
-          <div className="relative">
-            {/* Price */}
-            <div className="mb-8 text-center">
-              <div className="text-4xl font-medium text-white md:text-5xl">
-                £2,799
-                <span className="text-xl font-normal text-gray-400">/month</span>
+          {/* Main retainer card — overlaps the pilot card */}
+          <div className="relative z-10 -mt-12 overflow-hidden rounded-3xl border border-[#6214d9]/30 bg-[#0a0a0a] p-8 md:p-10">
+            {/* Purple orb decoration */}
+            <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96">
+              <div className="h-full w-full rounded-full bg-[#6214d9]/30 blur-3xl" />
+            </div>
+
+            <div className="relative">
+              {/* Price */}
+              <div className="mb-8 text-center">
+                <span className="mb-2 inline-block text-xs font-medium uppercase tracking-wider text-gray-400">
+                  Full retainer
+                </span>
+                <div className="text-4xl font-medium text-white md:text-5xl">
+                  £2,799
+                  <span className="text-xl font-normal text-gray-400">/month</span>
+                </div>
+                <p className="mt-2 text-gray-500">
+                  Less than a part-time contractor.
+                  <br />
+                  Less than half a full-time hire.
+                </p>
               </div>
-              <p className="mt-2 text-gray-500">
-                Less than a part-time contractor.
-                <br />
-                Less than half a full-time hire.
+
+              {/* CTA */}
+              <a
+                href="https://calendly.com/saahil_mehta/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-10 block w-full rounded-full bg-[#6214d9] py-4 text-center font-medium text-white transition-all hover:bg-[#7c3aed]"
+              >
+                Book a call
+              </a>
+
+              {/* Features - Two columns */}
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* Engineering */}
+                <div>
+                  <h3 className="mb-6 text-2xl text-white">
+                    Engineering
+                  </h3>
+                  <ul className="space-y-4">
+                    {engineeringFeatures.map((feature) => (
+                      <li key={feature.text} className="flex items-start gap-3 text-sm text-white">
+                        <feature.icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
+                        {feature.text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Knowsee */}
+                <div>
+                  <h3 className="mb-6 text-2xl text-white">
+                    <span className="font-serif">Know</span><span className="font-serif italic">see</span> <span className="text-lg text-gray-500">(included)</span>
+                  </h3>
+                  <ul className="space-y-4">
+                    {knowseeFeatures.map((feature) => (
+                      <li key={feature.text} className="flex items-start gap-3 text-sm text-white">
+                        <feature.icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
+                        {feature.text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Commitment note */}
+              <p className="mt-10 text-center text-sm text-gray-500">
+                No lock-in. Cancel anytime.
+              </p>
+              <p className="mt-2 text-center text-xs text-gray-600">
+                Save 15% with an annual commitment.
               </p>
             </div>
-
-            {/* CTA */}
-            <a
-              href="https://calendly.com/saahil_mehta/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-10 block w-full rounded-full bg-[#6214d9] py-4 text-center font-medium text-white transition-all hover:bg-[#7c3aed]"
-            >
-              Book a call
-            </a>
-
-            {/* Features - Two columns */}
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* Engineering */}
-              <div>
-                <h3 className="mb-6 text-2xl text-white">
-                  Engineering
-                </h3>
-                <ul className="space-y-4">
-                  {engineeringFeatures.map((feature) => (
-                    <li key={feature.text} className="flex items-start gap-3 text-sm text-white">
-                      <feature.icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
-                      {feature.text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Knowsee */}
-              <div>
-                <h3 className="mb-6 text-2xl text-white">
-                  <span className="font-serif">Know</span><span className="font-serif italic">see</span> <span className="text-lg text-gray-500">(included)</span>
-                </h3>
-                <ul className="space-y-4">
-                  {knowseeFeatures.map((feature) => (
-                    <li key={feature.text} className="flex items-start gap-3 text-sm text-white">
-                      <feature.icon className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#6214d9]" />
-                      {feature.text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Commitment note */}
-            <p className="mt-10 text-center text-sm text-gray-500">
-              Start with a 30-day pilot. No strings attached. If it&apos;s not right, walk away.
-            </p>
-            <p className="mt-2 text-center text-xs text-gray-600">
-              Save 15% with an annual commitment.
-            </p>
           </div>
         </motion.div>
       </div>

@@ -26,7 +26,7 @@ const steps = [
     icon: "/lotties/maintain.json",
     title: "Maintain",
     description:
-      "Monitoring, updates, and support. Governed by strict SLAs and an experienced team of engineers (human and AI) led by Saahil.",
+      "Monitoring, updates, and support. Governed by strict SLAs and an experienced team of engineers (human and AI).",
   },
 ];
 

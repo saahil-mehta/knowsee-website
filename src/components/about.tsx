@@ -27,9 +27,9 @@ export function About() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-xl text-lg text-gray-400">
-            Former agency-side data engineer at Publicis and WPP.
+            Data engineering background across Publicis and WPP.
             <br />
-            Now building the data team that small companies actually need.
+            Knowsee is the data team that small companies actually need.
           </p>
           <p className="mt-4 text-lg text-gray-400">
             Learn more at{" "}

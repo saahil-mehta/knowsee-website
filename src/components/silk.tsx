@@ -1,7 +1,16 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { forwardRef, useRef, useMemo, useLayoutEffect } from "react";
+import {
+  forwardRef,
+  useRef,
+  useMemo,
+  useLayoutEffect,
+  useState,
+  useEffect,
+  Component,
+} from "react";
+import type { ReactNode } from "react";
 import { Color, Mesh, ShaderMaterial } from "three";
 
 interface SilkProps {
@@ -21,6 +30,58 @@ interface SilkPlaneProps {
     uRotation: { value: number };
     uTime: { value: number };
   };
+}
+
+function SilkFallback({ color = "#2a1055" }: { color?: string }) {
+  return (
+    <div
+      className="h-full w-full"
+      style={{
+        background: `radial-gradient(ellipse at 50% 50%, ${color}, #0a0a0a)`,
+      }}
+    />
+  );
+}
+
+function hasWebGLSupport(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const canvas = document.createElement("canvas");
+    const gl =
+      canvas.getContext("webgl2") ||
+      canvas.getContext("webgl") ||
+      canvas.getContext("experimental-webgl");
+    return gl instanceof WebGLRenderingContext || gl instanceof WebGL2RenderingContext;
+  } catch {
+    return false;
+  }
+}
+
+interface ErrorBoundaryProps {
+  fallback: ReactNode;
+  children: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+class WebGLErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(): ErrorBoundaryState {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
 }
 
 const hexToNormalisedRGB = (hex: string): [number, number, number] => {
@@ -133,6 +194,11 @@ export function Silk({
   rotation = 0,
 }: SilkProps) {
   const meshRef = useRef<Mesh>(null);
+  const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setWebglSupported(hasWebGLSupport());
+  }, []);
 
   const uniforms = useMemo(
     () => ({
@@ -146,10 +212,19 @@ export function Silk({
     [speed, scale, noiseIntensity, color, rotation]
   );
 
+  // Still checking — render nothing to avoid flash
+  if (webglSupported === null) return null;
+
+  if (!webglSupported) {
+    return <SilkFallback color={color} />;
+  }
+
   return (
-    <Canvas dpr={[1, 2]} frameloop="always">
-      <SilkPlane ref={meshRef} uniforms={uniforms} />
-    </Canvas>
+    <WebGLErrorBoundary fallback={<SilkFallback color={color} />}>
+      <Canvas dpr={[1, 2]} frameloop="always">
+        <SilkPlane ref={meshRef} uniforms={uniforms} />
+      </Canvas>
+    </WebGLErrorBoundary>
   );
 }
 

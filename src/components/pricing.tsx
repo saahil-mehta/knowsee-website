@@ -117,9 +117,7 @@ export function Pricing() {
             <div className="relative">
               {/* Price */}
               <div className="mb-8 text-center">
-                <span className="mb-2 inline-block text-xs font-medium uppercase tracking-wider text-gray-400">
-                  Full retainer
-                </span>
+                <p className="mb-1 text-sm text-gray-500">starting from</p>
                 <div className="text-4xl font-medium text-white md:text-5xl">
                   £2,799
                   <span className="text-xl font-normal text-gray-400">/month</span>

@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Space_Grotesk, Instrument_Serif, Geist } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const satoshi = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Satoshi-Variable.woff2",
-      style: "normal",
-    },
-  ],
-  display: "swap",
-  variable: "--font-satoshi",
-});
-
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-inter",
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -29,17 +16,11 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
 });
 
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist",
-});
-
 export const metadata: Metadata = {
-  title: "Knowsee | Data Engineering and AI",
+  title: "Knowsee | The Brand Intelligence Engine",
   description:
-    "We become your data team. Fix the foundations, connect the sources, and give you an AI that answers questions from all of it.",
-  keywords: ["data engineering", "AI", "agency data", "reporting automation", "data pipelines"],
+    "Quantified intelligence across AI visibility, commerce readiness, and competitive position. Plus, custom reports built around your metrics.",
+  keywords: ["brand intelligence", "AI visibility", "GEO", "agentic commerce", "competitive analysis", "brand audit"],
 };
 
 export default function RootLayout({
@@ -48,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${geist.variable}`}>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
       <body className="antialiased">
         {children}
       </body>

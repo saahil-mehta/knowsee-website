@@ -18,7 +18,7 @@ export function Navigation() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-6 pt-6">
-      <nav className="mx-auto max-w-4xl">
+      <nav className="mx-auto max-w-6xl">
         <GlassSurface
           width="100%"
           height="auto"
@@ -26,7 +26,7 @@ export function Navigation() {
           backgroundOpacity={0.3}
           blur={16}
           saturation={1.2}
-          className="px-6 py-3"
+          className="px-8 py-5"
         >
           <div className="flex w-full items-center justify-between">
           {/* Logo */}
@@ -37,7 +37,7 @@ export function Navigation() {
             </span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation — right-aligned */}
           <div className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => (
               <a
@@ -48,18 +48,6 @@ export function Navigation() {
                 {item.label}
               </a>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <a
-              href="https://calendly.com/saahil_mehta/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-[#6214d9] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#7928e8]"
-            >
-              Book a call
-            </a>
           </div>
 
           {/* Mobile Menu Button */}

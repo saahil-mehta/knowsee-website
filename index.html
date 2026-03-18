@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowsee | The Ad Intelligence Engine</title>
+<meta name="description" content="Knowsee is an ad intelligence platform. AI visibility, commerce readiness, competitive position. Scored and quantified. 80+ data points. Under 5 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0e;
+  --text: #e8e8eb;
+  --text-dim: #8a8a94;
+  --text-faint: rgba(138,138,148,0.4);
+  --accent: #6214d9;
+  --accent-light: #7c3aed;
+  --accent-glow: rgba(98,20,217,0.12);
+  --accent-glow-strong: rgba(98,20,217,0.25);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(98,20,217,0.10) 0%,
+    transparent 25%,
+    transparent 75%,
+    rgba(98,20,217,0.10) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  max-width: 640px;
+  width: 100%;
+  padding: 0 32px;
+  padding-top: min(16vh, 160px);
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 72px;
+  animation: fadeIn 0.8s ease both;
+}
+
+.logo em {
+  font-style: italic;
+  color: var(--accent-light);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(38px, 6.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 52px;
+  animation: fadeIn 0.8s ease 0.12s both;
+}
+
+.stats {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 52px;
+  animation: fadeIn 0.8s ease 0.22s both;
+}
+
+.stat-number {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--accent-light);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.body-text {
+  animation: fadeIn 0.8s ease 0.32s both;
+}
+
+.body-text p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-dim);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.body-text p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.body-text p.pull {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+
+.pricing-line {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 44px;
+  margin-bottom: 44px;
+  animation: fadeIn 0.8s ease 0.38s both;
+}
+
+.pricing-amount {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.pricing-detail {
+  font-size: 14px;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-glow-strong), transparent 80%);
+  margin: 52px 0;
+}
+
+.links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  animation: fadeIn 0.8s ease 0.44s both;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--text-dim);
+  transition: all 0.25s ease;
+}
+
+.links a:hover {
+  color: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+.footer {
+  margin-top: 88px;
+  font-size: 12px;
+  color: var(--text-faint);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  animation: fadeIn 0.8s ease 0.54s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .page { padding: 0 24px; padding-top: 100px; padding-bottom: 60px; }
+  .stats { flex-direction: column; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="vignette"></div>
+
+<div class="page">
+
+  <div class="logo">Know<em>see</em></div>
+
+  <h1>The ad intelligence engine.</h1>
+
+  <div class="stats">
+    <div>
+      <div class="stat-number">80+</div>
+      <div class="stat-label">data points per audit across<br>AI, commerce, and competition.</div>
+    </div>
+    <div>
+      <div class="stat-number">84%</div>
+      <div class="stat-label">of brands have zero visibility<br>into how AI represents them.</div>
+    </div>
+  </div>
+
+  <div class="body-text">
+    <p>Someone in your category is already measuring things you have yet to consider.</p>
+
+    <p>How AI models rank you against competitors. Whether your commerce stack is ready for agentic buyers. Which of your campaigns are visible inside ChatGPT, Gemini, and Perplexity. Where your share of voice sits in AI-generated recommendations. How your product pages perform when a model decides what to recommend. What your competitor changed last quarter that shifted their position above yours.</p>
+
+    <p><strong>Knowsee is an ad intelligence platform.</strong> AI visibility, commerce readiness, competitive position, scored and quantified. It probes foundation models, crawls your footprint and your competitors', and delivers a complete audit. 80+ data points. Under five minutes. Any client, any vertical.</p>
+
+    <p>Every audit produces a playbook with cited evidence. Not theory. Specific changes, ranked by impact, grounded in what the data actually returned. AI search traffic converts at 4.4x the rate of traditional organic. The brands measuring this now are the ones setting the pace.</p>
+
+    <p class="pull">Agencies run it under their own name. Their identity, their reports, their client relationships. Knowsee is the engine underneath.</p>
+
+    <p>The engine runs across GPT-4o, Gemini, Mistral, and Claude simultaneously. It accumulates brand memory over time, so every audit builds on the last.</p>
+
+    <p>Free 7-day pilot. No lock-in.</p>
+  </div>
+
+  <hr>
+
+  <div class="pricing-line">
+    <div class="pricing-amount">From &pound;2,799</div>
+    <div class="pricing-detail">/month. Annual saves 10%. Server and model compute at cost.</div>
+  </div>
+
+  <div class="body-text">
+    <p>Ships production-ready: containerised, Terraform-packaged, SSO enabled, with structured output via API, MCP, or BigQuery.</p>
+
+    <p>Built by <strong>Saahil Mehta</strong>. Data and AI engineering across <strong>Publicis</strong> and <strong>WPP</strong>. Open-source contributor to Google Agent Starter Pack, dbt-BigQuery, and CopilotKit. GDG London. DSF 2026 Mentor.</p>
+  </div>
+
+  <hr>
+
+  <div class="links">
+    <a href="https://calendly.com/saahil_mehta/30min" target="_blank">Book a demo</a>
+    <a href="https://saahil.co.uk" target="_blank">About Saahil</a>
+    <a href="mailto:hello@knowsee.co.uk">Contact</a>
+  </div>
+
+  <div class="footer">&copy; 2026 Knowsee</div>
+
+</div>
+
+</body>
+</html>
